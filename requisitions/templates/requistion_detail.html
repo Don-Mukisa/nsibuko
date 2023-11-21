@@ -1,0 +1,15 @@
+<!-- requisitions/templates/requisitions/requisition_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Requisition Detail</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+
+  <p>Deposit: {{ requisition.calculate_deposit }}</p>
+{% endblock %}
